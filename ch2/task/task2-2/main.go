@@ -57,12 +57,5 @@ func Transfor(str string) {
 		fmt.Println(float64(stt / 1000))
 	case "t":
 		fmt.Println(float64(stt * 1000))
-	case "help":
-		Help()
 	}
-}
-
-// Help ：辅助函数，如何进行使用
-func Help() {
-	// fmt.Println("示例：go run main.go -long mm 12")
 }
