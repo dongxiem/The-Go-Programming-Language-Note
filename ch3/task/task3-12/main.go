@@ -5,7 +5,6 @@ import "fmt"
 
 func main() {
 	fmt.Println(EathOther("321", "123"))
-
 }
 
 // EathOther ： 判断两个字符串是否是是相互打乱的，也就是说它们有着相同的字符，但是对应不同的顺序
