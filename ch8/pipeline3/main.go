@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// counter ： 进行计数
+// counter : 进行计数
 func counter(out chan<- int) {
 	for x := 0; x < 100; x++ {
 		out <- x
@@ -10,7 +10,7 @@ func counter(out chan<- int) {
 	close(out)
 }
 
-// squarer ：进行平方原酸
+// squarer : 进行乘方
 func squarer(out chan<- int, in <-chan int) {
 	for v := range in {
 		out <- v * v
@@ -18,6 +18,7 @@ func squarer(out chan<- int, in <-chan int) {
 	close(out)
 }
 
+// printer ：进行通道的值打印
 func printer(in <-chan int) {
 	for v := range in {
 		fmt.Println(v)

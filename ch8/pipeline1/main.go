@@ -5,14 +5,15 @@ import "fmt"
 func main() {
 	naturals := make(chan int)
 	squares := make(chan int)
-	// 启动一个Counter goroutine
+
+	// 进行计数
 	go func() {
 		for x := 0; ; x++ {
 			naturals <- x
 		}
 	}()
 
-	// 启动一个Squarer goroutine
+	// 进行乘方计算
 	go func() {
 		for {
 			x := <-naturals
@@ -20,7 +21,7 @@ func main() {
 		}
 	}()
 
-	// 在主协程main中进行打印Printer
+	// 进行通道取值打印
 	for {
 		fmt.Println(<-squares)
 	}
